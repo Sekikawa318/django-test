@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>審査状況確認</h3>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    {% for item in object_list %}
+    <div class="alert alert-success" role="alert">
+        <p>pk：{{ item.pk }}</p>
+        <p>タイトル：<a href="{% url 'detail' item.pk %}">{{ item.title }}</a></p>
+        <p>ユーザー：{{ item.user }}</p>
+        <p>ステータス：{{ item.creditstatus }}</p>
+    </div>
+    {% endfor %}
+    <a href="{% url 'logout' %}">logout</a>&nbsp;&nbsp;
+    <a href="{% url 'create' %}">ダミーデータ作成</a>&nbsp;&nbsp;
+    <a href="{% url 'search' %}">検索</a>
+</div>
+{% endblock content%}
+
+
