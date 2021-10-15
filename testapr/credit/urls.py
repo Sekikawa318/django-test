@@ -10,5 +10,6 @@ urlpatterns = [
     # path("good/<int:pk>", goodfunc, name="good"), 
     # path("read/<int:pk>", readfunc, name="read"), 
     path("create/", CreditCreate.as_view(), name="create"),
-    path("search/", searchfunc, name="search")
+    path("search/", searchfunc, name="search"),
+    path("", loginfunc, name="login"), 
 ]

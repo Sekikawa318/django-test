@@ -15,8 +15,11 @@
           <input type=text class="form-control" id="input_pk" name="pk" placeholder="Enter pk">
         </div>
         <button type="submit" class="btn btn-primary">検索</button>
-        
     </form>
+    
+    <a href="{% url 'logout' %}">logout</a>&nbsp;&nbsp;
+    <a href="{% url 'create' %}">ダミーデータ作成</a>&nbsp;&nbsp;
+    <a href="{% url 'search' %}">検索</a>
 {% endblock content%}
 
 
