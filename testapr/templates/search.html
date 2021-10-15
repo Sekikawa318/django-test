@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>検索</h3>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleInputEmail1">pkを入力して検索</label>
+          <input type=text class="form-control" id="input_pk" name="pk" placeholder="Enter pk">
+        </div>
+        <button type="submit" class="btn btn-primary">検索</button>
+        
+    </form>
+{% endblock content%}
+
+

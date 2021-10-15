@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    <h3>detail page</h3>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    <div class="alert alert-success" role="alert">
+        <p name="title">タイトル：{{ object.title }}</p>
+        <p name="user">ユーザー：{{ object.user }}</p>
+        <p name="status">ステータス：{{ object.creditstatus }}</p>
+        <p name="detail">詳細：{{ object.others }}</p>
+    </div>
+    <a href="{% url 'logout' %}">logout</a>&nbsp;&nbsp;
+    <a href="{% url 'list' %}">審査状況リスト</a>&nbsp;&nbsp;
+    <a href="{% url 'search' %}">検索</a>
+</div>
+{% endblock content%}
+
+

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>タイトル:&nbsp;<input type="text" name="title"></p>
+    <p>顧客名:&nbsp;<input type="text" name="user"></p>
+    <p>審査ステータス:&nbsp;<input type="text" name="creditstatus"></p>
+    <p>備考:&nbsp;<input type="text" name="others"></p>
+    <input type="submit" value="create">
+</form>
+<a href="{% url 'logout' %}">logout</a>&nbsp;&nbsp;
+<a href="{% url 'list' %}">審査状況リスト</a>&nbsp;&nbsp;
+<a href="{% url 'search' %}">検索</a>
+
+{% else %}
+please login
+{% endif %}
+
+{% endblock content %}
